@@ -5,8 +5,7 @@ on:
     types: [opened, edited, synchronize, reopened]
 
 jobs:
-  check-main-pull-request-title:
-    if: github.event.pull_request.base.ref == 'main'
+  check-pull-request-title:
     runs-on: ubuntu-latest
     steps:
       - name: Check main pull request title
@@ -14,12 +13,13 @@ jobs:
         with:
           script: |
             const prTitle = context.payload.pull_request.title;
+            const targetsMain = context?.payload?.pull_request?.base?.ref === 'main'
 
             const regex = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9][a-zA-Z0-9 \-]*\))?!?: .{1,}/;
 
             if (!regex.test(prTitle)) {
-              core.setFailed(
-              `❌ ERROR: Commit message does not follow Conventional Commits specification
+
+              const message = (targetsMain ? '❌ ERROR' : '⚠️ WARNING' ) + `: Commit message does not follow Conventional Commits specification
 
               Your commit message:
                 "${prTitle}"
@@ -44,51 +44,13 @@ jobs:
                 feat(api): add user authentication
                 fix: resolve null pointer exception
                 docs(readme): update installation instructions
-                feat!: breaking change with exclamation mark`);
-            } else {
-              core.info(`✅ Commit message format looks good: "${prTitle}"`);
-            }
+                feat!: breaking change with exclamation mark`
 
-  check-any-pull-request-title:
-    if: github.event.pull_request.base.ref != 'main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check pull request title
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const prTitle = context.payload.pull_request.title;
-
-            const regex = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9][a-zA-Z0-9 \-]*\))?!?: .{1,}/;
-
-            if (!regex.test(prTitle)) {
-              core.warning(
-              `Warning ⚠️: Commit message does not follow Conventional Commits specification
-
-              Your commit message:
-                "${prTitle}"
-
-              Expected format:
-                type(scope): description
-              
-              Valid types:
-                - feat:     A new feature
-                - fix:      A bug fix
-                - docs:     Documentation only changes
-                - style:    Code style changes (formatting, missing semi colons, etc)
-                - refactor: Code change that neither fixes a bug nor adds a feature
-                - perf:     Performance improvements
-                - test:     Adding or updating tests
-                - build:    Changes to build system or dependencies
-                - ci:       Changes to CI configuration files and scripts
-                - chore:    Other changes that don't modify src or test files
-                - revert:   Reverts a previous commit
-
-              Examples:
-                feat(api): add user authentication
-                fix: resolve null pointer exception
-                docs(readme): update installation instructions
-                feat!: breaking change with exclamation mark`);
+                if (targetsMain) {
+                  core.setFailed(message);
+                } else {
+                  core.warning(message);
+                }
             } else {
               core.info(`✅ Commit message format looks good: "${prTitle}"`);
             }
