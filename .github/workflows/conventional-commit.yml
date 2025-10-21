@@ -17,7 +17,7 @@ jobs:
             const repo = context.repo.repo;
             const owner = context.repo.owner;
 
-            const regex = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9][a-zA-Z0-9 \-]*\))?!?: .{1,};
+            const regex = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9][a-zA-Z0-9 \-]*\))?!?: .{1,}/;
 
             if (!regex.test(prTitle)) {
               core.setFailed(
