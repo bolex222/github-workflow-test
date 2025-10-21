@@ -18,9 +18,32 @@ jobs:
 
             if (!regex.test(prTitle)) {
               core.setFailed(
-                `❌ Invalid squash commit message: "${prTitle}"\n` +
-                `Format should be: "ABC-123: short description"`
-              );
+              `❌ ERROR: Commit message does not follow Conventional Commits specification
+
+              Your commit message:
+                "${prTitle}"
+
+              Expected format:
+                type(scope): description
+              
+              Valid types:
+                - feat:     A new feature
+                - fix:      A bug fix
+                - docs:     Documentation only changes
+                - style:    Code style changes (formatting, missing semi colons, etc)
+                - refactor: Code change that neither fixes a bug nor adds a feature
+                - perf:     Performance improvements
+                - test:     Adding or updating tests
+                - build:    Changes to build system or dependencies
+                - ci:       Changes to CI configuration files and scripts
+                - chore:    Other changes that don't modify src or test files
+                - revert:   Reverts a previous commit
+
+              Examples:
+                feat(api): add user authentication
+                fix: resolve null pointer exception
+                docs(readme): update installation instructions
+                feat!: breaking change with exclamation mark`);
             } else {
               core.info(`✅ Commit message format looks good: "${prTitle}"`);
             }
