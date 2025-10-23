@@ -34,6 +34,7 @@ jobs:
         id: release
         with:
           release-type: node
+          target-branch: main
           package-name: '${{ steps.package.outputs.name }}'
 
       - name: Setup Node.js
