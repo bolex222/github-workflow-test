@@ -1,6 +1,6 @@
 {
-  "name": "test-release-please",
-  "private": true,
+  "name": "@bolex222/test-release-please",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/main.js",
