@@ -1,0 +1,73 @@
+name: Release and Publish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get package info
+        id: package
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          SCOPE=$(echo "$PACKAGE_NAME" | cut -d'/' -f1 | cut -d'@' -f2)
+          {
+            echo "name=${PACKAGE_NAME}"
+            echo "scope=${SCOPE}"
+          } >> "$GITHUB_OUTPUT"
+
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+          package-name: '${{ steps.package.outputs.name }}'
+
+      - name: Setup Node.js
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@${{ steps.package.outputs.scope }}'
+
+      - name: Install dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm ci
+
+      - name: Build package
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm run build
+
+      - name: Publish to GitHub Packages
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm publish --access restricted
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish summary
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          {
+            echo "### 🚀 Release Published"
+            echo ""
+            echo "**Version:** ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
+            echo "**Tag:** ${{ steps.release.outputs.tag_name }}"
+            echo ""
+            echo "Published to GitHub Packages: \`${{ steps.package.outputs.name }}@${{ steps.release.outputs.tag_name }}\`"
+            echo ""
+            echo "📝 A PR has been created to merge \`release\` → \`main\`"
+          } >> "$GITHUB_STEP_SUMMARY"
