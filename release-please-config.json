@@ -1,5 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "package-name": "@bolex222/github-workflow-test",
+      "extra-files": [
+        "package.json",
+        "package-lock.json"
+      ]
+    }
+  }, 
   "release-search-depth": 200,
   "pull-request-title-pattern": "chore(release): 🚀 release ${version}",
   "pull-request-header": ":rocket: Release ${version}",
