@@ -36,6 +36,9 @@ jobs:
           release-type: node
           target-branch: main
           package-name: '${{ steps.package.outputs.name }}'
+          branch: build-dist
+          title: "chore: publish package"
+          message: "chore: build test"
 
       - name: Setup Node.js
         if: ${{ steps.release.outputs.release_created }}
