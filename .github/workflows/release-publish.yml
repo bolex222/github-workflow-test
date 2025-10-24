@@ -35,6 +35,7 @@ jobs:
         with:
           release-type: node
           target-branch: main
+          package-name: '${{ steps.package.outputs.name }}'
       - name: Setup Node.js
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/setup-node@v4
