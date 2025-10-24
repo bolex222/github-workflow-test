@@ -39,7 +39,7 @@ jobs:
           # Customize the release PR branch name (default is "release-please--branches--{branch}")
           pull-request-header: 'release-version-${version}'
           # Customize the release PR title pattern
-          pull-request-title-pattern: 'chore${scope}: release${component} ${version}'
+          pull-request-title-pattern: 'chore: release${component} ${version}'
           # The following are for the build-dist PR (separate from release PR)
           branch: build-dist
           title: "chore: publish package"
