@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://github.com/bolex222/github-workflow-test/compare/v2.1.0...v2.2.0) (2025-10-24)
+
+
+### Features
+
+* test 4 ([1adf2a9](https://github.com/bolex222/github-workflow-test/commit/1adf2a9dc5fdccaaf78aee6f6b098fb7f40e91ca))
+* test 5 ([da2b3b3](https://github.com/bolex222/github-workflow-test/commit/da2b3b3d4e63f99ffc5fa64023b0a0e1e917fff5))
+
 ## [2.1.0](https://github.com/bolex222/github-workflow-test/compare/v2.0.0...v2.1.0) (2025-10-24)
 
 
