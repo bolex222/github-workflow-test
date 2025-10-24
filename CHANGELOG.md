@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/bolex222/github-workflow-test/compare/v2.3.0...v2.4.0) (2025-10-24)
+
+
+### Features
+
+* test 7 ([eed7bbd](https://github.com/bolex222/github-workflow-test/commit/eed7bbddc73dec7516fb23a75ea713e5e5a36252))
+
 ## [2.3.0](https://github.com/bolex222/github-workflow-test/compare/v2.2.0...v2.3.0) (2025-10-24)
 
 
