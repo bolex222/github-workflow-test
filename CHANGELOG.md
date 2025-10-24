@@ -3,6 +3,18 @@
 ## [2.5.0](https://github.com/bolex222/github-workflow-test/compare/v2.4.0...v2.5.0) (2025-10-24)
 
 
+### Features
+
+* new ([fc9beff](https://github.com/bolex222/github-workflow-test/commit/fc9beff738ba3a8215629f267374547425c6020d))
+* new value ([30e47e6](https://github.com/bolex222/github-workflow-test/commit/30e47e6a46b02baf883391cdc5d9833680c10905))
+* test 10 ([4ba4dae](https://github.com/bolex222/github-workflow-test/commit/4ba4daef699708dd3b36bde3854578b5f172d6b2))
+* test 11 ([cb2fc22](https://github.com/bolex222/github-workflow-test/commit/cb2fc22267801267eefb2d54681da390425099ff))
+* test 8 ([6951935](https://github.com/bolex222/github-workflow-test/commit/69519352122cc249a9d1cf61c1cb59241a82bff2))
+* test 9 ([bdfb7e3](https://github.com/bolex222/github-workflow-test/commit/bdfb7e3ce87b71902e77066676deaf86e629a873))
+
+## [2.5.0](https://github.com/bolex222/github-workflow-test/compare/v2.4.0...v2.5.0) (2025-10-24)
+
+
 ### ✨ Features
 
 * test 8 ([6951935](https://github.com/bolex222/github-workflow-test/commit/69519352122cc249a9d1cf61c1cb59241a82bff2))
