@@ -1,4 +1,4 @@
 export function clamp(val: number, min: number, max: number): number {
-  console.log('almost nothing')
+  console.log('almost nothing more')
   return Math.max(Math.min(val, max), min)
 }
