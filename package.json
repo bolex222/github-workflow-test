@@ -3,10 +3,9 @@
   "private": false,
   "version": "2.8.0",
   "type": "module",
-  "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./src/main.ts",
   "files": [
-    "dist"
+    "src"
   ],
   "repository": "https://github.com/bolex222/github-workflow-test.git",
   "scripts": {
