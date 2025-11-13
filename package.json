@@ -1,6 +1,6 @@
 {
   "name": "@bolex222/github-workflow-test",
-  "private": false,
+  "private": true,
   "version": "2.9.0",
   "type": "module",
   "main": "./src/main.ts",
