@@ -36,27 +36,6 @@ jobs:
           release-type: node
           target-branch: main
           package-name: '${{ steps.package.outputs.name }}'
-      - name: Setup Node.js
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@${{ steps.package.outputs.scope }}'
-
-      - name: Install dependencies
-        if: ${{ steps.release.outputs.release_created }}
-        run: npm ci
-
-      - name: Build package
-        if: ${{ steps.release.outputs.release_created }}
-        run: npm run build
-
-      - name: Publish to GitHub Packages
-        if: ${{ steps.release.outputs.release_created }}
-        run: npm publish --access restricted
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish summary
         if: ${{ steps.release.outputs.release_created }}

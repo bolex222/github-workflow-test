@@ -8,9 +8,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": "https://github.com/bolex222/github-workflow-test.git",
   "scripts": {
     "build": "tsc && vite build"
