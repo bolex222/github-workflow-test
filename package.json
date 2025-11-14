@@ -5,7 +5,8 @@
   "type": "module",
   "main": "./src/main.ts",
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "repository": "https://github.com/bolex222/github-workflow-test.git",
   "scripts": {
