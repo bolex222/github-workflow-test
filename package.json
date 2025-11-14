@@ -4,10 +4,6 @@
   "version": "2.10.0",
   "type": "module",
   "main": "./src/main.ts",
-  "files": [
-    "src",
-    "dist"
-  ],
   "repository": "https://github.com/bolex222/github-workflow-test.git",
   "scripts": {
     "build": "tsc && vite build"
