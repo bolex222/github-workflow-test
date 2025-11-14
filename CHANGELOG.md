@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.0](https://github.com/bolex222/github-workflow-test/compare/v2.10.0...v2.11.0) (2025-11-14)
+
+
+### Features
+
+* remove files ([2bbf7d1](https://github.com/bolex222/github-workflow-test/commit/2bbf7d1ae6a1557f31bc5a789d3fd9099fe1b648))
+
 ## [2.10.0](https://github.com/bolex222/github-workflow-test/compare/v2.9.1...v2.10.0) (2025-11-14)
 
 
