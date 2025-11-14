@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.2](https://github.com/bolex222/github-workflow-test/compare/v2.13.1...v2.13.2) (2025-11-14)
+
+
+### Bug Fixes
+
+* small cangbe ([be73e92](https://github.com/bolex222/github-workflow-test/commit/be73e92fff25af5cc42f4c40a450fa012ceaf3f3))
+
 ## [2.13.1](https://github.com/bolex222/github-workflow-test/compare/v2.13.0...v2.13.1) (2025-11-14)
 
 
