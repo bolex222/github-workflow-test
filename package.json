@@ -7,7 +7,7 @@
   "repository": "https://github.com/bolex222/github-workflow-test.git",
   "scripts": {
     "build": "vite build",
-    "postinstall": "npm run build"
+    "postinstall": "npm install && npm run build"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
