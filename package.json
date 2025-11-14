@@ -1,7 +1,7 @@
 {
   "name": "@bolex222/github-workflow-test",
   "private": true,
-  "version": "2.13.2",
+  "version": "2.13.3",
   "type": "module",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
