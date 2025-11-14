@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.0](https://github.com/bolex222/github-workflow-test/compare/v2.11.0...v2.12.0) (2025-11-14)
+
+
+### Features
+
+* add postinstall ([72962c2](https://github.com/bolex222/github-workflow-test/commit/72962c238189a6ec81f3b86bbb03360a3d7c5dcd))
+
 ## [2.11.0](https://github.com/bolex222/github-workflow-test/compare/v2.10.0...v2.11.0) (2025-11-14)
 
 
